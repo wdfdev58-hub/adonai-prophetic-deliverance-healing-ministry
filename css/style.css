@@ -1,122 +1,162 @@
-/* Revival Fire Ministry — custom styles atop Tailwind.
-   Concept: sacred fire in the Kalahari night. */
+/* Adonai Prophetic Deliverance & Healing Ministry — Void Editorial direction.
+   Concept: dark theatrical editorial — glowing serif, film grain, drifting imagery. */
 
 :root {
-  --ink: #0F0A16;
-  --ember: #7A3DFF;
-  --blaze: #4C1D95;
-  --gold: #F5B841;
-  --bone: #F0EBFA;
+  --void: #050505;
+  --panel: #0A0A0A;
+  --card: #111111;
+  --accent: #FF4500;
+  --warm: #FFE0E0;
+  --bone: #F2F0EC;
 }
 
 html { scroll-behavior: smooth; }
 body { overflow-x: hidden; }
 
-/* ---- atmospheric glow behind heroes ---- */
-.hero-glow {
-  background:
-    radial-gradient(60% 55% at 50% 108%, rgba(122,61,255,0.30), transparent 60%),
-    radial-gradient(40% 40% at 80% 100%, rgba(245,184,65,0.18), transparent 60%),
-    radial-gradient(45% 45% at 15% 95%, rgba(76,29,149,0.20), transparent 65%);
+/* ---- fixed film grain over everything ---- */
+.grain {
+  position: fixed; inset: -50%; z-index: 90; pointer-events: none;
+  width: 200%; height: 200%; opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 0.9s steps(4) infinite;
+}
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, 1%); }
+  50% { transform: translate(1%, -2%); }
+  75% { transform: translate(-1%, 2%); }
+  100% { transform: translate(2%, -1%); }
 }
 
-/* ---- nav ---- */
+/* ---- warm atmospheric aura behind dark sections ---- */
+.aura {
+  background:
+    radial-gradient(55% 50% at 50% 110%, rgba(255,69,0,0.14), transparent 62%),
+    radial-gradient(38% 40% at 82% 100%, rgba(255,224,224,0.06), transparent 60%),
+    radial-gradient(42% 45% at 12% 96%, rgba(255,69,0,0.08), transparent 65%);
+}
+
+/* ---- glowing serif (the signature) ---- */
+.hero-title, .verse-glow {
+  text-shadow: 0 0 50px rgba(255,224,224,0.35), 0 0 120px rgba(255,69,0,0.18);
+}
+.line-mask { overflow: hidden; }
+
+/* ---- floating atmospheric imagery ---- */
+.float-img {
+  position: absolute; z-index: 5; display: none; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.8);
+  will-change: transform;
+}
+.float-img img { display: block; height: 100%; width: 100%; object-fit: cover; opacity: 0.75; }
+.float-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(5,5,5,0.15), rgba(5,5,5,0.5));
+  mix-blend-mode: multiply;
+}
+@media (min-width: 1024px) {
+  .float-img { display: block; }
+  .float-1 { left: 4%; top: 16%; width: 15rem; height: 19rem; transform: rotate(-4deg); }
+  .float-2 { right: 5%; top: 12%; width: 13rem; height: 16rem; transform: rotate(3deg); }
+  .float-3 { left: 9%; bottom: 12%; width: 11rem; height: 13rem; transform: rotate(2deg); }
+}
+
+/* ---- nav (shrinks + darkens past 50px) ---- */
 #nav.scrolled {
-  background: rgba(15,10,22,0.72);
+  background: rgba(5,5,5,0.78);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
+#nav.scrolled #navInner { padding-top: 0.85rem; padding-bottom: 0.85rem; }
 .navlink { position: relative; transition: color .3s; }
-.navlink:hover { color: var(--bone); }
+.navlink:hover { color: var(--warm); }
 .navlink::after {
   content: ''; position: absolute; left: 0; bottom: -6px; height: 1px; width: 0;
-  background: linear-gradient(90deg, var(--gold), var(--ember)); transition: width .35s ease;
+  background: var(--accent); transition: width .35s ease;
 }
 .navlink:hover::after { width: 100%; }
 
-.ember-dot { box-shadow: 0 0 14px 2px rgba(122,61,255,0.8); animation: pulse 2.4s ease-in-out infinite; }
-@keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .55; transform: scale(1.35); } }
-
-/* ---- buttons ---- */
+/* ---- buttons: sharp editorial ---- */
 .cta, .cta-sm {
   display: inline-flex; align-items: center; gap: .5rem;
-  background: linear-gradient(120deg, var(--ember), var(--blaze));
-  color: #1a0d06; font-weight: 700; letter-spacing: .01em;
-  border-radius: 999px; transition: transform .3s, box-shadow .3s, filter .3s;
-  box-shadow: 0 10px 30px -10px rgba(122,61,255,0.6);
+  background: var(--accent); color: #FFF7F2; font-weight: 600; letter-spacing: .02em;
+  border-radius: 2px; transition: transform .3s, box-shadow .3s, filter .3s;
+  box-shadow: 0 10px 40px -12px rgba(255,69,0,0.55);
 }
-.cta { padding: .95rem 1.9rem; font-size: 1rem; }
-.cta-sm { padding: .6rem 1.2rem; font-size: .82rem; }
-.cta:hover, .cta-sm:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 18px 40px -12px rgba(122,61,255,0.75); }
+.cta { padding: .95rem 2rem; font-size: 1rem; }
+.cta-sm { padding: .6rem 1.25rem; font-size: .82rem; }
+.cta:hover, .cta-sm:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 18px 50px -14px rgba(255,69,0,0.7); }
 
 .cta-ghost {
   display: inline-flex; align-items: center; gap: .5rem;
-  padding: .95rem 1.7rem; border-radius: 999px; font-weight: 600; color: var(--bone);
-  border: 1px solid rgba(240,235,250,0.22); transition: border-color .3s, background .3s, transform .3s;
+  padding: .95rem 1.8rem; border-radius: 2px; font-weight: 500; color: var(--bone);
+  border: 1px solid rgba(242,240,236,0.22); transition: border-color .3s, background .3s, transform .3s;
 }
-.cta-ghost:hover { border-color: rgba(245,184,65,0.7); background: rgba(245,184,65,0.06); transform: translateY(-2px); }
+.cta-ghost:hover { border-color: rgba(255,69,0,0.7); background: rgba(255,69,0,0.07); transform: translateY(-2px); }
 
 /* ---- shared bits ---- */
 .eyebrow {
-  display: inline-flex; align-items: center; gap: .6rem;
-  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .3em;
-  color: rgba(245,184,65,0.9);
+  display: inline-flex; align-items: center; gap: .7rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem; font-weight: 500; text-transform: uppercase; letter-spacing: .35em;
+  color: rgba(255,69,0,0.85);
 }
-.eyebrow::before { content: '🔥'; font-size: .8rem; filter: grayscale(0.1); }
+.eyebrow::before { content: ''; display: inline-block; width: 1.6rem; height: 1px; background: rgba(255,69,0,0.5); }
 
-.statlabel { margin-top: .35rem; font-size: .8rem; color: rgba(240,235,250,0.55); line-height: 1.3; }
+.statlabel { margin-top: .35rem; font-size: .8rem; color: rgba(242,240,236,0.5); line-height: 1.3; }
 
-/* ---- expect cards ---- */
+.img-frame {
+  overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.8);
+}
+
+/* ---- expect cards (parallax pair, adjacent offset) ---- */
 .card {
-  position: relative; padding: 2.25rem 1.9rem 2rem; border-radius: 1rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+  position: relative; padding: 2.5rem 2rem 2.25rem;
+  background: var(--card);
   border: 1px solid rgba(255,255,255,0.08); overflow: hidden;
-  transition: transform .45s cubic-bezier(.2,.7,.2,1), border-color .45s, background .45s;
+  transition: border-color .45s, background .45s;
 }
 .card::before {
   content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity .45s;
-  background: radial-gradient(80% 80% at 50% 120%, rgba(122,61,255,0.22), transparent 60%);
+  background: radial-gradient(80% 80% at 50% 120%, rgba(255,69,0,0.14), transparent 60%);
 }
-.card:hover { transform: translateY(-8px); border-color: rgba(245,184,65,0.35); }
+.card:hover { border-color: rgba(255,69,0,0.4); }
 .card:hover::before { opacity: 1; }
-.card-num { font-family: 'Anton', sans-serif; font-size: 2.4rem; color: rgba(245,184,65,0.28); letter-spacing: .05em; }
-.card:hover .card-num { color: rgba(245,184,65,0.6); transition: color .45s; }
-.card-title { margin-top: .6rem; font-size: 1.4rem; font-weight: 700; color: var(--bone); }
-.card-body { margin-top: .75rem; color: rgba(240,235,250,0.68); line-height: 1.6; }
+.card-num { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.6rem; color: rgba(255,69,0,0.35); }
+.card:hover .card-num { color: rgba(255,69,0,0.75); transition: color .45s; }
+.card-title { margin-top: .6rem; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--warm); }
+.card-body { margin-top: .75rem; font-weight: 300; color: rgba(242,240,236,0.65); line-height: 1.65; }
 
 /* ---- service list ---- */
 .svc { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.5rem .25rem; transition: padding-left .35s, background .35s; }
-.svc:hover { padding-left: 1rem; background: linear-gradient(90deg, rgba(122,61,255,0.06), transparent); }
-.svc-name { font-size: 1.35rem; font-weight: 700; color: var(--bone); }
-.svc-sub { margin-top: .2rem; font-size: .85rem; color: rgba(240,235,250,0.5); }
-.svc-time { font-family: 'Anton', sans-serif; font-size: 2rem; letter-spacing: .04em;
-  background: linear-gradient(120deg, var(--gold), var(--ember)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.svc:hover { padding-left: 1rem; background: linear-gradient(90deg, rgba(255,69,0,0.06), transparent); }
+.svc-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; color: var(--warm); }
+.svc-sub { margin-top: .2rem; font-size: .85rem; color: rgba(242,240,236,0.45); }
+.svc-time { font-family: 'JetBrains Mono', monospace; font-size: 1.6rem; letter-spacing: .04em; color: var(--accent); }
 
 /* ---- ministries grid ---- */
-.min { padding: 2.5rem 1.75rem; background: var(--ink); transition: background .4s, transform .4s; }
-.min::selection { background: var(--ember); }
-.min:hover { background: linear-gradient(180deg, rgba(122,61,255,0.12), rgba(15,10,22,1)); }
-.min-title { font-size: 1.15rem; font-weight: 700; color: var(--bone); }
-.min:hover .min-title { color: var(--gold); transition: color .4s; }
-.min-body { margin-top: .6rem; font-size: .92rem; color: rgba(240,235,250,0.6); line-height: 1.55; }
+.min { padding: 2.5rem 1.75rem; background: var(--void); transition: background .4s; }
+.min:hover { background: linear-gradient(180deg, rgba(255,69,0,0.1), rgba(5,5,5,1)); }
+.min-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: var(--warm); }
+.min:hover .min-title { color: var(--accent); transition: color .4s; }
+.min-body { margin-top: .6rem; font-size: .92rem; font-weight: 300; color: rgba(242,240,236,0.55); line-height: 1.6; }
 
 .footlink { transition: color .3s; }
-.footlink:hover { color: var(--gold); }
-
-/* ---- intro spark ---- */
-.intro-spark { box-shadow: 0 0 0 0 rgba(122,61,255,0.9); }
+.footlink:hover { color: var(--accent); }
 
 /* ---- scroll cue ---- */
 .scroll-cue { animation: floaty 2.6s ease-in-out infinite; }
 @keyframes floaty { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 
 /* ---- reveal base (GSAP animates these in; without JS they stay visible) ---- */
-.reveal { will-change: transform, opacity; }
+.reveal, .parallax-card { will-change: transform, opacity; }
 
 /* ---- reduced motion: everything calm and visible ---- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal, .hero-title .line { opacity: 1 !important; transform: none !important; }
-  .ember-dot, .scroll-cue, .intro-spark { animation: none !important; }
+  .reveal, .hero-title .line, .parallax-card { opacity: 1 !important; transform: none !important; }
+  .scroll-cue, .grain { animation: none !important; }
   #intro { display: none; }
 }
