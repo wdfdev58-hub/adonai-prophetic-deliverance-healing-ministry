@@ -3,35 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adonai Prophetic Deliverance & Healing Ministry — Mpumalanga, South Africa</title>
-  <meta name="description" content="Adonai Prophetic Deliverance & Healing Ministry is a Spirit-filled church in Mpumalanga, South Africa — worship, the Word, prayer and healing. Plan your visit." />
+  <title>Adonai Prophetic Deliverance &amp; Healing Ministry — Komatipoort, Mpumalanga</title>
+  <meta name="description" content="Adonai Prophetic Deliverance & Healing Ministry, led by Pastor Elijah P. Mashele — obeying the voice of the Holy Spirit, called to serve and sent to heal, in Komatipoort, Mpumalanga." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Adonai Prophetic Deliverance & Healing Ministry — Mpumalanga" />
-  <meta property="og:description" content="A Spirit-filled family church — worship, the Word, prayer and community." />
+  <meta property="og:title" content="Adonai Prophetic Deliverance & Healing Ministry" />
+  <meta property="og:description" content="Obeying the voice of the Holy Spirit. Called to serve, sent to heal." />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="assets/img/logo.png" />
 
-  <!-- Fonts: Playfair Display (editorial serif), Inter (body), JetBrains Mono (meta) -->
+  <!-- Fonts: Playfair Display (serif headings), Inter (body/sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind (Play CDN) + Void Editorial tokens -->
+  <!-- Tailwind (Play CDN) + brand tokens -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            void: '#050505', panel: '#0A0A0A', card: '#111111',
-            accent: '#FF4500', warm: '#FFE0E0', bone: '#F2F0EC',
+            ink: '#171325',
+            lav: '#F6F6FD',
+            purple: { DEFAULT: '#5E3A9C', deep: '#2B0064', mid: '#4B4AC0' },
+            skyblue: '#3A7DDB',
+            gold: { light: '#F5D77C', DEFAULT: '#E0A83A', dark: '#C6892A' },
+            nightfoot: '#0B061D',
           },
           fontFamily: {
-            display: ['"Playfair Display"', 'serif'],
+            serif: ['"Playfair Display"', 'serif'],
             sans: ['Inter', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
           },
         },
       },
@@ -41,289 +44,169 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="bg-void font-sans text-bone antialiased selection:bg-accent selection:text-void">
-
-  <!-- Film grain over everything -->
-  <div class="grain" aria-hidden="true"></div>
-
-  <!-- Intro -->
-  <div id="intro" class="fixed inset-0 z-[100] flex items-center justify-center bg-void">
-    <p class="intro-word font-display text-3xl italic tracking-wide text-warm">Adonai</p>
-  </div>
-
-  <!-- Scroll progress line -->
-  <div id="progress" class="fixed left-0 top-0 z-[60] h-[2px] w-0 bg-accent"></div>
+<body class="bg-lav font-sans text-ink antialiased">
 
   <!-- Nav -->
   <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-500">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 transition-all duration-500 lg:px-10" id="navInner">
-      <a href="#top" class="group flex items-baseline gap-3">
-        <span class="font-display text-xl italic text-warm">Adonai</span>
-        <span class="hidden font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40 sm:block">Prophetic · Deliverance · Healing</span>
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 transition-all duration-500 lg:px-10" id="navInner">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/img/logo.png" alt="Adonai Prophetic Deliverance & Healing Ministry crest" width="56" height="56" class="h-12 w-12 rounded-full lg:h-14 lg:w-14" />
+        <span class="flex flex-col leading-tight">
+          <span class="font-sans text-sm font-bold uppercase tracking-[0.2em] text-white">Adonai Ministry</span>
+          <span class="font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-light">His mercy endures forever</span>
+        </span>
       </a>
-      <nav class="hidden items-center gap-9 text-sm font-medium text-bone/60 md:flex">
-        <a href="#welcome" class="navlink">Welcome</a>
-        <a href="#expect" class="navlink">What to expect</a>
-        <a href="#times" class="navlink">Times &amp; place</a>
-        <a href="#ministries" class="navlink">Ministries</a>
-        <a href="#give" class="navlink">Give</a>
+      <nav class="hidden items-center gap-10 text-[15px] font-medium text-white/90 md:flex">
+        <a href="#vision" class="navlink">Vision</a>
+        <a href="#mission" class="navlink">Mission</a>
+        <a href="#pastor" class="navlink">Pastor</a>
+        <a href="#contact" class="navlink">Contact</a>
       </nav>
-      <a href="#visit" class="cta-sm">Plan your visit</a>
+      <button id="menuBtn" class="flex h-10 w-10 items-center justify-center text-white md:hidden" aria-label="Open menu" aria-expanded="false">
+        <svg id="menuIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-6 w-6"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden flex-col gap-1 border-t border-white/10 bg-purple-deep/95 px-6 py-4 backdrop-blur md:hidden">
+      <a href="#vision" class="mobilelink">Vision</a>
+      <a href="#mission" class="mobilelink">Mission</a>
+      <a href="#pastor" class="mobilelink">Pastor</a>
+      <a href="#contact" class="mobilelink">Contact</a>
     </div>
   </header>
 
   <main id="top">
 
     <!-- ============ HERO ============ -->
-    <section id="hero" class="relative flex min-h-[100svh] items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image:url('assets/img/hero.jpg')" aria-hidden="true"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-void/70 via-void/85 to-void" aria-hidden="true"></div>
-      <div class="aura pointer-events-none absolute inset-0" aria-hidden="true"></div>
-
-      <!-- Floating atmospheric imagery (the signature) -->
-      <figure class="float-img float-1" aria-hidden="true"><img src="assets/img/moment-2.jpg" alt="" width="800" height="600" /></figure>
-      <figure class="float-img float-2" aria-hidden="true"><img src="assets/img/moment-1.jpg" alt="" width="800" height="600" /></figure>
-      <figure class="float-img float-3" aria-hidden="true"><img src="assets/img/visit.jpg" alt="" width="800" height="600" /></figure>
-
-      <div id="heroContent" class="relative z-10 mx-auto w-full max-w-5xl px-6 pt-28 text-center">
-        <p class="reveal mx-auto mb-8 flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.4em] text-bone/50">
-          <span class="h-px w-8 bg-accent/70"></span> Mpumalanga · South Africa <span class="h-px w-8 bg-accent/70"></span>
-        </p>
-
-        <h1 class="hero-title font-display leading-[1.02] text-warm">
-          <span class="line-mask block"><span class="line block text-[14vw] md:text-[9.5vw] lg:text-[8.5rem]">Set free,</span></span>
-          <span class="line-mask block"><span class="line block text-[14vw] italic md:text-[9.5vw] lg:text-[8.5rem]">made whole.</span></span>
-        </h1>
-
-        <p class="reveal mx-auto mt-9 max-w-xl text-lg font-light leading-relaxed text-bone/70">
-          Adonai Prophetic Deliverance & Healing Ministry is a Spirit-filled church in the heart of the community — real worship,
-          the living Word, and a family that prays. Wherever you are on the journey, there's a place for you here.
-        </p>
-
-        <div class="reveal mt-11 flex flex-wrap items-center justify-center gap-4">
-          <a href="#visit" class="cta">Plan your visit</a>
-          <a href="#welcome" class="cta-ghost">A word of welcome</a>
-        </div>
-      </div>
-
-      <a href="#welcome" class="scroll-cue absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-bone/40" aria-label="Scroll down">
-        <span class="mb-2 block font-mono text-[10px] uppercase tracking-[0.3em]">Scroll</span>
-        <span class="mx-auto block h-10 w-[1px] bg-gradient-to-b from-accent to-transparent"></span>
-      </a>
-    </section>
-
-    <!-- ============ WELCOME ============ -->
-    <section id="welcome" class="relative border-t border-white/5 bg-panel py-28 lg:py-36">
-      <div class="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-12 lg:px-10">
-        <div class="lg:col-span-5">
-          <p class="eyebrow reveal">Welcome home</p>
-          <h2 class="reveal mt-6 font-display text-5xl leading-[1.05] text-warm md:text-6xl">
-            You were<br>made for<br><span class="italic text-accent">more.</span>
-          </h2>
-          <div class="reveal img-frame mt-9">
-            <img src="assets/img/welcome.jpg" alt="Adonai Prophetic Deliverance & Healing Ministry congregation gathered in worship" loading="lazy" width="800" height="600" class="h-64 w-full object-cover lg:h-80" />
-          </div>
-        </div>
-        <div class="lg:col-span-7">
-          <div class="reveal space-y-6 text-lg font-light leading-relaxed text-bone/70">
-            <p class="mission font-display text-2xl leading-snug text-bone/90 md:text-3xl">We are an ordinary people who have met an
-              <span class="italic text-warm">extraordinary God.</span></p>
-            <p>Under the leadership of
-              <strong class="font-semibold text-bone">Pastor Elijah P Mashele</strong>, Adonai Prophetic Deliverance & Healing Ministry
-              exists to see lives filled with hope — in Mpumalanga and across the community.</p>
-            <p>Sundays are warm and unhurried. You'll find honest worship, a message rooted in Scripture,
-              and people who will know your name. Come as you are. Leave encouraged and sent.</p>
-          </div>
-          <div class="reveal mt-10 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
-            <div><div class="stat font-display text-4xl italic text-accent">3</div><div class="statlabel">Weekly gatherings</div></div>
-            <div><div class="stat font-display text-4xl italic text-accent">1</div><div class="statlabel">Family, many stories</div></div>
-            <div><div class="stat font-display text-4xl italic text-accent">All</div><div class="statlabel">Are welcome here</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ WHAT TO EXPECT ============ -->
-    <section id="expect" class="relative py-28 lg:py-36">
-      <div class="mx-auto max-w-7xl px-6 lg:px-10">
-        <div class="max-w-2xl">
-          <p class="eyebrow reveal">What to expect</p>
-          <h2 class="reveal mt-6 font-display text-5xl leading-[1.05] text-warm md:text-6xl">Your first <span class="italic">Sunday</span></h2>
-          <p class="reveal mt-6 text-lg font-light text-bone/65">No pressure, no performance — just a family who will make you feel at home.</p>
-        </div>
-
-        <div class="mt-16 grid gap-6 md:grid-cols-3">
-          <article class="card group reveal parallax-card" data-dir="-1">
-            <span class="card-num">01</span>
-            <h3 class="card-title">Spirit-filled worship</h3>
-            <p class="card-body">Music that lifts the room and makes space to meet God. Come to sing, or just to sit and breathe.</p>
-          </article>
-          <article class="card group reveal parallax-card" data-dir="1">
-            <span class="card-num">02</span>
-            <h3 class="card-title">The living Word</h3>
-            <p class="card-body">Clear, honest teaching straight from Scripture — for real life, real questions, real Mondays.</p>
-          </article>
-          <article class="card group reveal parallax-card" data-dir="-1">
-            <span class="card-num">03</span>
-            <h3 class="card-title">Prayer &amp; healing</h3>
-            <p class="card-body">We pray for one another and we expect God to move. Bring what's heavy — you won't carry it alone.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SCRIPTURE (pinned) ============ -->
-    <section id="scripture" class="relative overflow-hidden bg-panel py-40 lg:py-56">
-      <div class="aura pointer-events-none absolute inset-0" aria-hidden="true"></div>
-      <div class="relative z-10 mx-auto max-w-5xl px-6 text-center">
-        <p id="verseTag" class="eyebrow mx-auto justify-center">Luke 4:18</p>
-        <blockquote id="verse" class="verse-glow mt-8 font-display text-4xl italic leading-tight text-warm md:text-6xl lg:text-7xl">
-          &ldquo;The Spirit of the Lord is on me... he has sent me to proclaim freedom for the prisoners and to set the oppressed free.&rdquo;
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- ============ MOMENTS ============ -->
-    <section id="moments" class="relative py-24 lg:py-32">
-      <div class="mx-auto max-w-7xl px-6 lg:px-10">
-        <p class="eyebrow reveal">Life at Adonai</p>
-        <h2 class="reveal mt-6 font-display text-5xl leading-[1.05] text-warm md:text-6xl">Set free, <span class="italic">made whole</span></h2>
-        <div class="mt-12 grid gap-5 sm:grid-cols-3">
-          <figure class="reveal parallax-card group relative overflow-hidden" data-dir="-1">
-            <img src="assets/img/moment-1.jpg" alt="The worship team leading praise" loading="lazy" width="800" height="600" class="h-72 w-full object-cover transition duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-void via-void/20 to-transparent"></div>
-            <figcaption class="absolute bottom-4 left-5 font-display text-2xl italic text-warm">Worship</figcaption>
-          </figure>
-          <figure class="reveal parallax-card group relative overflow-hidden" data-dir="1">
-            <img src="assets/img/moment-2.jpg" alt="Hands lifted in prayer" loading="lazy" width="800" height="600" class="h-72 w-full object-cover transition duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-void via-void/20 to-transparent"></div>
-            <figcaption class="absolute bottom-4 left-5 font-display text-2xl italic text-warm">Prayer</figcaption>
-          </figure>
-          <figure class="reveal parallax-card group relative overflow-hidden" data-dir="-1">
-            <img src="assets/img/moment-3.jpg" alt="Serving the Mpumalanga community" loading="lazy" width="800" height="600" class="h-72 w-full object-cover transition duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-void via-void/20 to-transparent"></div>
-            <figcaption class="absolute bottom-4 left-5 font-display text-2xl italic text-warm">Community</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ TIMES & PLACE ============ -->
-    <section id="times" class="relative py-28 lg:py-36">
-      <div class="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:px-10">
+    <section class="hero-gradient relative overflow-hidden pb-24 pt-40 lg:pb-32 lg:pt-52">
+      <div class="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:gap-16 lg:px-10">
         <div>
-          <p class="eyebrow reveal">Times &amp; place</p>
-          <h2 class="reveal mt-6 font-display text-5xl leading-[1.05] text-warm md:text-6xl">Come and <span class="italic">see</span></h2>
-          <div class="mt-10 divide-y divide-white/10 border-y border-white/10">
-            <div class="svc reveal">
-              <div><div class="svc-name">Sunday Celebration</div><div class="svc-sub">Worship · Word · Family</div></div>
-              <div class="svc-time">09:00</div>
-            </div>
-            <div class="svc reveal">
-              <div><div class="svc-name">Bible Study &amp; Prayer</div><div class="svc-sub">Wednesdays</div></div>
-              <div class="svc-time">18:00</div>
-            </div>
-            <div class="svc reveal">
-              <div><div class="svc-name">Adonai Night</div><div class="svc-sub">Fridays · Worship &amp; intercession</div></div>
-              <div class="svc-time">18:30</div>
-            </div>
-          </div>
-          <p class="reveal mt-8 flex items-start gap-3 text-bone/65">
-            <span class="mt-1 text-accent">◆</span>
-            <span>Mpumalanga, South Africa.<br><span class="text-sm text-bone/45">Tap the map for directions — we'll be watching for you.</span></span>
+          <p class="font-sans text-sm font-bold uppercase tracking-[0.35em] text-gold-light">Welcome to</p>
+          <h1 class="mt-6 font-serif text-[12vw] leading-[1.08] text-white sm:text-6xl lg:text-[4.25rem] xl:text-[4.75rem]">
+            Adonai Prophetic <span class="text-gold-light">Deliverance &amp; Healing</span> Ministry
+          </h1>
+          <p class="mt-8 max-w-lg text-lg leading-relaxed text-white/85">
+            Obeying the voice of the Holy Spirit. A place of deliverance for the bound and healing for the sick.
           </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#mission" class="btn-gold">Our Mission</a>
+            <a href="#contact" class="btn-outline">Visit Us</a>
+          </div>
         </div>
-        <div class="reveal img-frame">
-          <iframe title="Adonai Prophetic Deliverance & Healing Ministry location — Mpumalanga"
-            src="https://www.google.com/maps?q=Mpumalanga,+South Africa,+South+Africa&output=embed"
-            class="h-full min-h-[380px] w-full grayscale-[0.5]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ MINISTRIES ============ -->
-    <section id="ministries" class="relative border-t border-white/5 bg-panel py-28 lg:py-36">
-      <div class="mx-auto max-w-7xl px-6 lg:px-10">
-        <div class="max-w-2xl">
-          <p class="eyebrow reveal">Get involved</p>
-          <h2 class="reveal mt-6 font-display text-5xl leading-[1.05] text-warm md:text-6xl">Find your <span class="italic">people</span></h2>
-        </div>
-        <div class="mt-14 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="min group reveal"><h3 class="min-title">Prayer &amp; Intercession</h3><p class="min-body">The engine room. We stand in the gap for our town.</p></div>
-          <div class="min group reveal"><h3 class="min-title">Worship &amp; Praise</h3><p class="min-body">Voices and instruments lifted with everything we have.</p></div>
-          <div class="min group reveal"><h3 class="min-title">Youth on Fire</h3><p class="min-body">The next generation, discipled and unashamed.</p></div>
-          <div class="min group reveal"><h3 class="min-title">Community Outreach</h3><p class="min-body">Faith with feet — feeding, visiting, loving Mpumalanga.</p></div>
+        <div class="mx-auto w-full max-w-sm rounded-2xl bg-white p-6 shadow-2xl lg:max-w-md">
+          <img src="assets/img/logo.png" alt="Adonai Prophetic Deliverance & Healing Ministry crest" width="700" height="700" class="h-auto w-full" />
         </div>
       </div>
     </section>
 
-    <!-- ============ VISIT CTA ============ -->
-    <section id="visit" class="relative overflow-hidden py-32 lg:py-44">
-      <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image:url('assets/img/visit.jpg')" aria-hidden="true"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-void via-void/90 to-void" aria-hidden="true"></div>
-      <div class="aura pointer-events-none absolute inset-0" aria-hidden="true"></div>
-      <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <p class="eyebrow mx-auto reveal justify-center">This Sunday</p>
-        <h2 class="reveal verse-glow mt-6 font-display text-6xl leading-[1.0] text-warm md:text-8xl">
-          Bring<br><span class="italic text-accent">everything.</span>
-        </h2>
-        <p class="reveal mx-auto mt-8 max-w-xl text-lg font-light text-bone/70">
-          Your questions, your doubts, your family, your hope. There's room at this fire for all of it — and for you.
+    <!-- ============ VISION ============ -->
+    <section id="vision" class="scroll-mark bg-lav py-24 lg:py-32">
+      <div class="mx-auto max-w-4xl px-6 text-center lg:px-10">
+        <p class="eyebrow-purple mx-auto">Our Vision</p>
+        <blockquote class="mt-6 font-serif text-3xl leading-snug text-ink sm:text-4xl lg:text-5xl">
+          &ldquo;Obeying the voice of the <span class="text-purple">Holy Spirit.</span>&rdquo;
+        </blockquote>
+        <div class="gold-divider mt-9"></div>
+      </div>
+
+      <!-- ============ MISSION ============ -->
+      <div id="mission" class="scroll-mark mx-auto mt-20 max-w-6xl px-6 text-center lg:px-10">
+        <p class="eyebrow-purple mx-auto">Our Mission</p>
+        <h2 class="mt-6 font-serif text-4xl text-ink sm:text-5xl">Called to serve, sent to heal</h2>
+
+        <div class="mt-16 grid gap-7 sm:grid-cols-3">
+          <article class="mission-card">
+            <span class="mission-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3 class="mission-title">Collaborate</h3>
+            <p class="mission-body">To collaborate with other Prophets in unity of purpose and Spirit.</p>
+          </article>
+          <article class="mission-card">
+            <span class="mission-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </span>
+            <h3 class="mission-title">Deliver</h3>
+            <p class="mission-body">To deliver the bound — setting captives free through the power of God.</p>
+          </article>
+          <article class="mission-card">
+            <span class="mission-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </span>
+            <h3 class="mission-title">Heal</h3>
+            <p class="mission-body">To heal the sick, restoring wholeness in body, mind and spirit.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PASTOR ============ -->
+    <section id="pastor" class="scroll-mark bg-white py-24 lg:py-32">
+      <div class="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
+        <div class="pastor-frame">
+          <img src="assets/img/pastor.jpg" alt="Pastor Elijah P. Mashele" width="900" height="1125" loading="lazy" class="h-auto w-full rounded-xl object-cover" />
+        </div>
+        <div>
+          <p class="eyebrow-purple">Meet our Pastor</p>
+          <h2 class="mt-6 font-serif text-4xl text-ink sm:text-5xl">Pastor Elijah P. Mashele</h2>
+          <div class="gold-divider mt-6 !mx-0"></div>
+          <p class="mt-8 max-w-xl text-lg leading-relaxed text-slate-600">
+            A faithful servant of God, called to shepherd the flock at Adonai Prophetic Deliverance and Healing
+            Ministry. Through prophetic ministry, deliverance, and prayer for the sick, Pastor Mashele walks daily
+            in obedience to the voice of the Holy Spirit.
+          </p>
+          <blockquote class="mt-8 border-l-4 border-gold pl-5 font-serif text-xl italic text-ink/80">
+            &ldquo;His mercy endures forever.&rdquo;
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="scroll-mark cta-gradient relative overflow-hidden py-24 lg:py-32">
+      <div class="relative z-10 mx-auto max-w-4xl px-6 text-center lg:px-10">
+        <span class="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold text-gold-light">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-6 w-6"><path d="M12 5v14M5 12h14"/></svg>
+        </span>
+        <h2 class="font-serif text-4xl text-white sm:text-5xl">Come worship with us</h2>
+        <p class="mx-auto mt-6 max-w-xl text-lg text-white/85">
+          All are welcome at the house of Adonai. Reach out for prayer, deliverance, or to plan your visit.
         </p>
-        <div class="reveal mt-10 flex flex-wrap justify-center gap-4">
-          <a href="#times" class="cta">See service times</a>
-          <a href="tel:+27729393553" class="cta-ghost">Call the church</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============ GIVE ============ -->
-    <section id="give" class="border-t border-white/5 bg-panel py-24">
-      <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 lg:flex-row lg:items-center lg:px-10">
-        <div class="max-w-xl">
-          <p class="eyebrow reveal">Give</p>
-          <h2 class="reveal mt-4 font-display text-4xl text-warm md:text-5xl">Fuel the <span class="italic">fire</span></h2>
-          <p class="reveal mt-4 font-light text-bone/65">Every gift keeps the doors open and the outreach moving. Thank you for sowing into what God is doing in Mpumalanga.</p>
+        <div class="mt-14 grid gap-5 sm:grid-cols-3">
+          <div class="contact-card">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <p class="contact-label">Visit</p>
+            <p class="contact-value">Contact for location</p>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.6 1.4l-.467.355a1 1 0 0 0-.302 1.214 14.7 14.7 0 0 0 6.201 6.2Z"/></svg>
+            </span>
+            <p class="contact-label">Call</p>
+            <a href="tel:+27150232043" class="contact-value">+27 15 023 2043</a>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <p class="contact-label">Email</p>
+            <a href="mailto:info@adonaiministry.org" class="contact-value">info@adonaiministry.org</a>
+          </div>
         </div>
-        <a href="#visit" class="cta reveal shrink-0">Give an offering</a>
       </div>
     </section>
   </main>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="relative overflow-hidden bg-void pb-16 pt-20">
-    <div class="pointer-events-none select-none whitespace-nowrap text-center font-display text-[24vw] italic leading-[0.9] text-white/[0.05]" aria-hidden="true" id="footWord">Adonai</div>
-    <div class="relative mx-auto -mt-[6vw] max-w-7xl px-6 lg:px-10">
-      <div class="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-        <div>
-          <div class="flex items-baseline gap-3">
-            <span class="font-display text-2xl italic text-warm">Adonai</span>
-            <span class="font-mono text-[10px] uppercase tracking-[0.28em] text-bone/40">Prophetic Deliverance &amp; Healing Ministry</span>
-          </div>
-          <p class="mt-4 max-w-sm text-sm font-light leading-relaxed text-bone/50">
-            A Spirit-filled church in Mpumalanga, South Africa. Led by Pastor Elijah P Mashele.
-            Come as you are — leave encouraged and sent.
-          </p>
-        </div>
-        <div class="grid grid-cols-2 gap-x-12 gap-y-2 text-sm text-bone/55">
-          <a href="#welcome" class="footlink">Welcome</a>
-          <a href="#times" class="footlink">Times &amp; place</a>
-          <a href="#expect" class="footlink">What to expect</a>
-          <a href="#ministries" class="footlink">Ministries</a>
-          <a href="#visit" class="footlink">Plan your visit</a>
-          <a href="#give" class="footlink">Give</a>
-        </div>
-      </div>
-      <div class="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 font-mono text-[11px] text-bone/35 sm:flex-row sm:items-center">
-        <p>© <span id="year"></span> Adonai Prophetic Deliverance & Healing Ministry · Mpumalanga, South Africa</p>
-        <p>Website by <span class="text-bone/60">World Development Fund</span></p>
-      </div>
-    </div>
+  <footer class="bg-nightfoot py-16 text-center">
+    <img src="assets/img/logo.png" alt="Adonai Prophetic Deliverance & Healing Ministry crest" width="72" height="72" class="mx-auto h-16 w-16 rounded-full" />
+    <p class="mt-6 font-serif text-xl text-white">Adonai Prophetic Deliverance and Healing Ministry</p>
+    <p class="mt-3 font-sans text-xs font-semibold uppercase tracking-[0.35em] text-gold-light">His mercy endures forever</p>
+    <p class="mt-8 font-sans text-xs text-white/30">© <span id="year"></span> Adonai Prophetic Deliverance &amp; Healing Ministry · Komatipoort, Mpumalanga</p>
   </footer>
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
